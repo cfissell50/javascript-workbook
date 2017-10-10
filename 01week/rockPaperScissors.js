@@ -7,11 +7,20 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+// Compare hand1 and hand2 inputs and spit out a result
+// written inside a whole function using if statements
+// rock beats scissors; paper beats rock; scissors beat paper
+// put the bulk in argument to minimize lines using pipes and ampersands
 function rockPaperScissors(hand1, hand2) {
-
-  // Write code here
-
+  if (hand1 === hand2){
+    return 'Tie!';
+  } else if ((hand1 === 'rock' && hand2 === 'scissors') || (hand1 === 'paper' && hand2 === 'rock') || (hand1 === 'scissors' && hand2 === 'paper')){
+    return 'Hand 1 is the victor!';
+  } else if ((hand2 === 'rock' && hand1 === 'scissors') || (hand2 === 'paper' && hand1 === 'rock') || (hand2 === 'scissors' && hand1 === 'paper')) {
+    return 'Hand 2 is the victor!';
+  } else {
+    return 'Someone is trying to cheat!';
+  }
 }
 
 function getPrompt() {
