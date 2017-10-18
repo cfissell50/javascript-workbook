@@ -49,3 +49,22 @@ if (typeof describe === 'function') {
   getPrompt();
 
 }
+
+
+// Global Storage, what do I need to keep on the largest scope
+// None I can think of maybe using a variable = 'ay'?
+
+//Break the string into an array, method to use
+// const stringToArray , using word.split(',')
+
+// Save the first value in the array, method to use
+// Using a const firstLetter = stringToArray[0]
+
+// Remove the first letter, method to use
+// const removeFirstLetter = using stringToArray.shift() as the method
+
+//Name of function, turning the array back into a string, method to use
+// const removeFirstLetter using .join()
+
+//Function to join the variable to the rest of the string and add "ay"
+// Return the var of + removeFirstLetter + "ay"
