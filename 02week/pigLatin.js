@@ -9,10 +9,17 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-
-  // Your code here
-
+  const splitWord = word.split('')
+    if (splitWord[0] === 'a' || splitWord[0] === 'e' || splitWord[0] === 'i' || splitWord[0] === 'o' || splitWord[0] === 'u'){
+      return word + 'yay'
+    } else {
+    const firstLetter = splitWord.shift();
+    const removeFirstLetter = splitWord.join('');
+    return removeFirstLetter + firstLetter + 'ay';
+    }
 }
+
+pigLatin();
 
 
 function getPrompt() {
