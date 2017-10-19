@@ -9,8 +9,11 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+  // make (word) all lowercase
     const lowerThatCase = word.toLowerCase();
+  // make that into array
     const splitWord = lowerThatCase.split('')
+  // check if any vowels if not move on to normalcy
       if (splitWord[0] === 'a' || splitWord[0] === 'e' || splitWord[0] === 'i' || splitWord[0] === 'o' || splitWord[0] === 'u'){
         return word + 'yay'
       } else {
