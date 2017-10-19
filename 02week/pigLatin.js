@@ -10,20 +10,20 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
   // make (word) all lowercase
-    const lowerThatCase = word.toLowerCase();
+  const lowerThatCase = word.toLowerCase().trim();
   // make that into array
-    const splitWord = lowerThatCase.split('')
+  const splitWord = lowerThatCase.split('');
   // check if any vowels if not move on to normalcy
-      if (splitWord[0] === 'a' || splitWord[0] === 'e' || splitWord[0] === 'i' || splitWord[0] === 'o' || splitWord[0] === 'u'){
-        return word + 'yay'
-      } else {
-        const firstLetter = splitWord.shift();
-        const removeFirstLetter = splitWord.join('');
-        return removeFirstLetter + firstLetter + 'ay';
-      }
+  if (splitWord[0] === 'a' || splitWord[0] === 'e' || splitWord[0] === 'i' || splitWord[0] === 'o' || splitWord[0] === 'u'){
+    return lowerThatCase + 'yay';
+  } else {
+    const firstLetter = splitWord.shift();
+    const removeFirstLetter = splitWord.join('');
+    return removeFirstLetter + firstLetter + 'ay';
+  }
 }
 
-pigLatin();
+pigLatin('ALEX');
 
 
 function getPrompt() {
