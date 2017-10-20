@@ -24,23 +24,33 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  // Winning Combos
+  // 00 01 02
+  // 10 11 12
+  // 20 21 22
 }
 
 function verticalWin() {
-  // Your code here
+  // Winning Combos
+  // 00 10 20
+  // 01 11 21
+  // 02 12 22
 }
 
 function diagonalWin() {
-  // Your code here
+  // Winning Combos
+  // 00 11 22
+  // 02 11 20
 }
 
 function checkForWin() {
-  // Your code here
+  // Check for any diagonal / vert / horiz wins
 }
 
 function ticTacToe(row, column) {
-  // Your code here
+  // if(indexOf()) methods using on click
+  // else if
+
 }
 
 function getPrompt() {
@@ -68,7 +78,7 @@ if (typeof describe === 'function') {
     });
     it('should alternate between players', () => {
       ticTacToe(0, 0);
-      assert.deepEqual(board, [ ['O', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
+      assert.deepEqual(board, [ ['O', '', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
     it('should check for vertical wins', () => {
       board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
