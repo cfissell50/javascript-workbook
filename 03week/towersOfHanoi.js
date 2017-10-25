@@ -52,3 +52,5 @@ function getPrompt() {
 getPrompt();
 
 
+// Test for legal move where [this] < [existing block]
+// Print 'YOU WIN' when key c = 4,3,2,1
