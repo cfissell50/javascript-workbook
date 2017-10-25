@@ -1,6 +1,11 @@
 'use strict';
 
-printListOfOlympians = () => {
-  let array = ['Zeus', 'Hades', 'Poseidon', 'Apollo', 'Hera'];
-  console.log(array.forEach())
+let arr1 = ['Zeus', 'Hades', 'Poseidon', 'Apollo', 'Hera'];
+
+  const printListOfOlympians = (arr1) => {
+    arr1.forEach(olympians) => {
+      console.log(olympians);
+    }
 }
+
+printListOfOlympians();
