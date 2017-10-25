@@ -23,25 +23,65 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
-function horizontalWin() {
-  // Your code here
+// Check for winning horizontal with if
+// 00 01 02
+// 10 11 12
+// 20 21 22
+const horizontalWin = () => {
+  if ((board[0][0] === board[0][1] && board[0][1] === board[0][2]) || (board[1][0] === board[1][1] && board[1][1] === board[1][2]) || (board[2][0] === board[2][1] &&
+      board[2][1] === board[2][2])) {
+    return true;
+  }
 }
 
-function verticalWin() {
-  // Your code here
+//Check for winning vertical with if
+//00 10 20
+//01 11 21
+//02 12 22
+const verticalWin = () => {
+  if ((board[0][0] === board[1][0] && board[1][0] === board[2][0]) || (board[0][1] === board[1][1] && board[1][1] === board[2][1]) || (board[0][2] === board[1][2] &&
+      board[1][2] === board[2][2])) {
+    return true;
+  }
 }
 
-function diagonalWin() {
-  // Your code here
+// Check for winning diagonalWin with if
+// 00 11 22
+// 02 11 20
+const diagonalWin = () => {
+  if (board[0][0] === board[1][1] && board[1][1] === board[2][2] || (board[0][2] === board[1][1] && board[1][1] === board[2][0])) {
+    return true;
+  }
 }
 
-function checkForWin() {
-  // Your code here
+// Got help from eddy, I do not completely understand yet
+const checkForWin = () => {
+  // if (horizontalWin() || verticalWin() || diagonalWin()) {
+  //   console.log(`Player ${playerTurn} Wins!`);
+  // } else if (turnCount === 9) {
+  //   console.log("It's a tie!")
+  // } else {
+  //   return false;
+  //}
+
 }
 
+// Got help from eddy, I do not completely understand yet
 function ticTacToe(row, column) {
-  // Your code here
+  //
+  // if (playerTurn === 'X') {
+  //   playerTurn = 'O';
+  // } else {
+  //   playerTurn = 'X';
+  // }
+  // if (board[row][column] === ' ') {
+  //   board[row].splice(column, 1, playerTurn);
+  // }
+  // return false;
+
 }
+
+
 
 function getPrompt() {
   printBoard();
@@ -68,7 +108,7 @@ if (typeof describe === 'function') {
     });
     it('should alternate between players', () => {
       ticTacToe(0, 0);
-      assert.deepEqual(board, [ ['O', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
+      assert.deepEqual(board, [ ['O', '', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
     it('should check for vertical wins', () => {
       board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
