@@ -19,13 +19,24 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
+// RUBRIC
+// Move piece from stack to stack 17
+// Working is legal function 17
+// Working check for win function 17
+// Working reset function 17
+// Clean PR , es6 syntax/linting 8
+// Function plan in comments (each function has a stated purpose and method) 16
+// At least 2 tests 8
+
+// es6 notation fat arrow everything//const everything
+
+// movePiece should use array method and dot method to select last index and grab it through push and pop
 const movePiece = (startStack, endStack) => {
   stacks[endStack].push(stacks[startStack].pop());
 }
 
-
+// Hierarchy of logic, if the stack has nothing in it, legal move, else the starting index popped should be less then the pop of the end stack. Or else move will not work.
 const isLegal = (startStack, endStack) => {
-  // Your code here
   if (stacks[endStack].length === 0) {
     return true;
   } else if (stacks[startStack].pop() < stacks[endStack].pop()) {
@@ -36,15 +47,15 @@ const isLegal = (startStack, endStack) => {
 }
 
 
+// checkforwin should use dot method in if statement, legal function should protect argument from c having out of order values.
+// length of c === 4 should result in win
 const checkForWin = () => {
-  // Your code here
   if (stacks.c.length === 4) {
-    return true;
+    console.log('Winner, Winner, Chicken Dinner!!');
   } else {
     return false;
   }
 }
-
 
 const towersOfHanoi = (startStack, endStack) => {
   if (movePiece(startStack, endStack)) {
