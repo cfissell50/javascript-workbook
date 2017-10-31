@@ -57,6 +57,8 @@ const checkForWin = () => {
   }
 }
 
+// use previous functions to put game together
+// if move function is valid run call back legal function, if nothing else run win function.
 const towersOfHanoi = (startStack, endStack) => {
   if (movePiece(startStack, endStack)) {
     isLegal(startStack, endStack)
