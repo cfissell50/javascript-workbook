@@ -79,6 +79,26 @@ function getPrompt() {
 
 getPrompt();
 
+
+// Moving stack should be from (a,c) should end a: 4,3,2 | b: | c: 1
+describe('#towersOfHanoi()', () => {
+  it('should be able to move a block', () => {
+    towersOfHanoi('a', 'c');
+    assert.deepEqual(stacks, { a: [4, 3, 2], b: [], c: [1] });
+  });
+});
+
+describe('#checkForWin()', () => {
+  it('should recognize a win', () => {
+    let stacks = {
+      a: [],
+      b: [],
+      c: [4,3,2,1]
+    };
+    assert.equal(checkForWin(), true);
+  });
+});
+
 // Test for legal move where [startStack] < [endStack] where a larger number cant follow a smaller number
 // Win function recognizing key c = 4,3,2,1 printing 'YOU WIN!'
 // guard against random letters and redundancies
