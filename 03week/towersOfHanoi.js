@@ -19,25 +19,53 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
+// RUBRIC
+// Move piece from stack to stack 17
+// Working is legal function 17
+// Working check for win function 17
+// Working reset function 17
+// Clean PR , es6 syntax/linting 8
+// Function plan in comments (each function has a stated purpose and method) 16
+// At least 2 tests 8
 
+// es6 notation fat arrow everything//const everything
+
+// movePiece should use array method and dot method to select last index and grab it through push and pop
+const movePiece = (startStack, endStack) => {
+  stacks[endStack].push(stacks[startStack].pop());
 }
 
-function isLegal() {
-  // Your code here
-
+// Hierarchy of logic, if the stack has nothing in it, legal move, else the starting index popped should be less then the pop of the end stack. Or else move will not work.
+const isLegal = (startStack, endStack) => {
+  if (stacks[endStack].length === 0) {
+    return true;
+  } else if (stacks[startStack].pop() < stacks[endStack].pop()) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function checkForWin() {
-  // Your code here
 
+// checkforwin should use dot method in if statement, legal function should protect argument from c having out of order values.
+// length of c === 4 should result in win
+const checkForWin = () => {
+  if (stacks.c.length === 4) {
+    console.log('Winner, Winner, Chicken Dinner!!');
+  } else {
+    return false;
+  }
 }
 
-function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+// use previous functions to put game together
+// if move function is valid run call back legal function, if nothing else run win function.
+const towersOfHanoi = (startStack, endStack) => {
+  if (movePiece(startStack, endStack)) {
+    isLegal(startStack, endStack)
+  }
+  checkForWin();
 }
+
 
 function getPrompt() {
   printStacks();
@@ -52,3 +80,28 @@ function getPrompt() {
 getPrompt();
 
 
+// Moving stack should be from (a,c) should end a: 4,3,2 | b: | c: 1
+describe('#towersOfHanoi()', () => {
+  it('should be able to move a block', () => {
+    towersOfHanoi('a', 'c');
+    assert.deepEqual(stacks, { a: [4, 3, 2], b: [], c: [1] });
+  });
+});
+
+describe('#checkForWin()', () => {
+  it('should recognize a win', () => {
+    let stacks = {
+      a: [],
+      b: [],
+      c: [4,3,2,1]
+    };
+    assert.equal(checkForWin(), true);
+  });
+});
+
+// Test for legal move where [startStack] < [endStack] where a larger number cant follow a smaller number
+// Win function recognizing key c = 4,3,2,1 printing 'YOU WIN!'
+// guard against random letters and redundancies
+// checking against different data type
+// Moving stack should be from (a,c) should end a: 4,3,2 | b: | c: 1
+// top disc
