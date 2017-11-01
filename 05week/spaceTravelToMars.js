@@ -9,7 +9,28 @@ let jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code here
+// 2 classes , CrewMember and Ship,
+// function entership should add crewmember to ship
+// function missionstatement should print "Can't perform a mission yet."
+
+class CrewMember {
+  constructor(name, job, specialSkill){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = [];
+  }
+ }
+
+class Ship {
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+}
+
 
 //tests
 if (typeof describe === 'function'){
@@ -21,6 +42,8 @@ if (typeof describe === 'function'){
       assert.equal(crewMember1.specialSkill, 'chemistry');
       assert.equal(crewMember1.ship, null);
     });
+    // crewmember should have a name, job, specialskill, and a ship
+    // these dot methods should print out these properties
 
     it('can enter a ship', function(){
       let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
@@ -31,6 +54,8 @@ if (typeof describe === 'function'){
       assert.equal(mav.crew[0], crewMember1);
     });
   });
+  // should be a ship class with type name and what its going to do
+  // after crewmember is added to ship it should correspond with the correct returns
 
   describe('Ship', function(){
     it('should have a name, a type, an ability and an empty crew upon instantiation', function(){
@@ -40,6 +65,8 @@ if (typeof describe === 'function'){
       assert.equal(mav.ability, 'Ascend into low orbit');
       assert.equal(mav.crew.length, 0);
     });
+    // ship class should have name type and an ability and an empty crew
+    // so when mav is referenced it should print out those returns
 
     it('can return a mission statement correctly', function(){
       let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
@@ -55,5 +82,7 @@ if (typeof describe === 'function'){
       crewMember2.enterShip(hermes);
       assert.equal(hermes.missionStatement(), "Interplanetary Space Travel");
     });
+    // designated all the vars
+    //
   });
 }
