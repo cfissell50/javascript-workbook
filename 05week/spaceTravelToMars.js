@@ -9,9 +9,42 @@ let jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code here
+// OOC crewmember that includes name, job, specialSkill, and ship.
+// Include a function within the ooc that can push a crewmember into the array of the ship.
+class CrewMember {
+  constructor(name, job, specialSkill, ship){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
+  enterShip(ship) {
+    this.ship = ship;
+    ship.crew.push(this);
+  }
+}
 
-//tests
+// OOC Ship that includes name, type, ability, and crew in empty array
+// function missionStatement that only returns the ships ability if there are crew members aboard.
+class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+
+  missionStatement() {
+    if (this.crew.length < 1) {
+      return "Can't perform a mission yet.";
+    } else {
+      return this.ability;
+    }
+  }
+}
+
+
+
 if (typeof describe === 'function'){
   describe('CrewMember', function(){
     it('should have a name, a job, a specialSkill and ship upon instantiation', function(){
