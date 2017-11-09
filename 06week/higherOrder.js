@@ -8,9 +8,15 @@ const assert = require('assert');
 //
 // Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
 
-function forEach(arr, callback) {
-  // Your code here
+// a functon that takes an array and a function that runs the function arr.length
+const numArray = [2, 4, 6, 8];
+function forEach(arr) {
+  for (i = 0; i <= arr.length; i ++){
+  console.log(arr[i] + 2);
 }
+}
+
+forEach(numArray);
 
 // map consists of an array, a function, and a return array.
 
@@ -21,8 +27,6 @@ function map(arr, callback) {
   })
   return newArr;
 }
-
-const numArray = [2, 4, 6, 8];
 
 map(numArray, (item)=> item + 2);
 
