@@ -32,21 +32,23 @@ function map(arr, callback) {
 
 map(numArray, (item)=> item + 2);
 
-const sortingFunction = (name) => {
-  if(name.length > 4) {
-    return name;
+const numTwoArray = [1,2,3,4,5,6,7,8]
+
+const sortingFunction = (num) => {
+  if(num > 4) {
+    return num;
   }
 }
 
-function filter( arr, callback) {
+function filter(arr, callback) {
   const newFilterArr = [];
-  arr.forEach((item) => {
-    newFilterArr.push(callback(item));
+  arr.forEach((num) => {
+    newFilterArr.push(callback(num));
   })
   return newFilterArr;
 }
 
-filter (numArray, sortingFunction);
+filter (numTwoArray, sortingFunction);
 
 
 function some(arr, callback) {
