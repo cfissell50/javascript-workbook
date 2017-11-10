@@ -9,11 +9,13 @@ const assert = require('assert');
 // Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
 
 // a functon that takes an array and a function that runs the function arr.length
+
 const numArray = [2, 4, 6, 8];
+
 function forEach(arr) {
   for (i = 0; i <= arr.length; i ++){
-  console.log(arr[i] + 2);
-}
+    console.log(arr[i] + 2);
+  }
 }
 
 forEach(numArray);
@@ -30,11 +32,22 @@ function map(arr, callback) {
 
 map(numArray, (item)=> item + 2);
 
-//
-
-function filter(arr, callback) {
-  // Your code here
+const sortingFunction = (name) => {
+  if(name.length > 4) {
+    return name;
+  }
 }
+
+function filter( arr, callback) {
+  const newFilterArr = [];
+  arr.forEach((item) => {
+    newFilterArr.push(callback(item));
+  })
+  return newFilterArr;
+}
+
+filter (numArray, sortingFunction);
+
 
 function some(arr, callback) {
   // Your code here
