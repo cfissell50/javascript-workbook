@@ -2,8 +2,6 @@
 
 // Take the following array of objects and console.log each user and their corresponding data in the following form: "user_name paid amount for product in city, state." using map.
 
-
-
 const userArray = [
     {
             "customer": {
@@ -46,3 +44,14 @@ const userArray = [
             }
         },
 ];
+
+// use userArray.map function and tick marks to print out in an array
+// inside the .map function return the corresponding information listed above.
+//return the array in a string so it looks cleaner using toString method.
+
+const customerSentence = userArray.map((entity) => {
+  return ` ${entity.customer.customerName} paid $${entity.customer.productPrice} for a ${entity.customer.product} in ${entity.customer.customerCity}, ${entity.customer.customerState}`;
+
+});
+
+console.log(customerSentence.toString());
