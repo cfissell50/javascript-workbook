@@ -10,16 +10,39 @@ class App extends Component {
   state = {
     playerTurn: 'X',
     grid: {},
+    // board: [
+    //   [0,1,2],
+    //   [3,4,5],
+    //   [6,7,8]
+    // ]
   }
+
+  // checkForWin() {
+  //   if(this.state.grid[0] && this.state.grid[1] && this.state.grid[3] === 'X'){
+  //     console.log('yay x wins')
+  //   }
+  // }
 
   handleClickEvent(cell){
     if(!this.state.grid[cell]){
       const newGrid = {...this.state.grid};
       newGrid[cell] = this.state.playerTurn;
       const playerTurn = this.state.playerTurn === 'X' ? 'O' : 'X';
-      this.setState({grid: newGrid, playerTurn})
+      this.setState({grid: newGrid, playerTurn});
+      checkForWin();
     }
   }
+
+  // renderBoard() {
+  //   return this.state.board.map((row, key) =>{
+  //     return (
+  //         <div className="row" key={key}>
+  //         {row.map((num, index) => {
+  //           return <div key={index} className="cellBox" onClick={() => this.handleClickEvent(0)}>{this.state.grid[0]}</div>
+  //         })}
+  //     )
+  //   })
+  // }
 
   render() {
       return (
