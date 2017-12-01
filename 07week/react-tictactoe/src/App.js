@@ -29,7 +29,6 @@ class App extends Component {
       newGrid[cell] = this.state.playerTurn;
       const playerTurn = this.state.playerTurn === 'X' ? 'O' : 'X';
       this.setState({grid: newGrid, playerTurn});
-      checkForWin();
     }
   }
 
